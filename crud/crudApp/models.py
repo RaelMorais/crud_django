@@ -17,7 +17,7 @@ class Livros(models.Model):
     titulo = models.CharField(max_length=255)
     autor = models.ForeignKey(Autor, related_name='livros', on_delete=models.CASCADE)
     genero= models.ForeignKey(Genero, related_name='Livros', on_delete=models.CASCADE)
-    preco = models.DecimalField(max_digits=6, decimal_places=2)
+    preco = models.DecimalField(max_digits=10, decimal_places=2)
     resumo = models.TextField()
 
     def __str__(self):
