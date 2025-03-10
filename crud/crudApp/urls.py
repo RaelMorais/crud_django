@@ -10,4 +10,5 @@ urlpatterns =[
     path('autores/novo/', views.create_autor, name='create_autor'),
     path('autores/editar/<int:pk>/', views.update_autor, name='update_autor'),
     path('autores/excluir/<int:pk>/', views.delete_autor, name='delete_autor'),
+    path('filtro', views.livros_filters, name='livros_filter'),
 ]

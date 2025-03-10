@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Autor, Livros
 from .forms import AutorForm, LivrosForm
-
+from .filters import LivrosFilter
 
 def autor_list(request):
     autor = Autor.objects.all()
@@ -69,3 +69,7 @@ def livro_delete(request, pk):
         return redirect('livro_list')
     return render(request, 'livro_delete.html', {'livro': livro})
 
+def livros_filters(request):
+    print("asdsads")
+    livros_filter = LivrosFilter(request.GET, queryset=Livros.objects.all())
+    return render(request, 'livros_listados.html', {'livros_filter': livros_filter})

@@ -1,0 +1,13 @@
+<form method="get">
+    <!-- Exibe o formulário de filtro -->
+    {{ livros_filter.form.as_p }}
+    <button type="submit">Filtrar</button>
+</form>
+
+<ul>
+    {% for livro in livros_filter.qs %}
+        <li>{{ livro.titulo }} - {{ livro.autor }} - {{ livro.preco }}</li>
+    {% empty %}
+        <li>Nenhum livro encontrado.</li>
+    {% endfor %}
+</ul>
