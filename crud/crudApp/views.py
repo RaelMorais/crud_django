@@ -3,11 +3,17 @@ from .models import Autor, Livros
 from .forms import AutorForm, LivrosForm
 from .filters import LivrosFilter
 
+def livros_list(request):
+    title = "Biblioteca do Dodo"
+    return render(request, 'livros_list.html', {'title': title})
+
+
 def autor_list(request):
     autor = Autor.objects.all()
     return render(request, 'autores.html', {'autor':autor})
 
 def create_autor(request):
+    print(create_autor)
     if request.method == 'POST':
         form = AutorForm(request.POST)
         if form.is_valid():
@@ -38,6 +44,7 @@ def delete_autor(request, pk):
 
 
 def livro_list(request):
+    title = 'dodo'
     livros = Livros.objects.all()
     return render(request, 'livro_list.html', {'livros': livros})
 
@@ -60,6 +67,7 @@ def livro_update(request, pk):
             return redirect('livro_list')
     else:
         form = LivrosForm(instance=livro)
+    print(form)
     return render(request, 'livro_form.html', {'form': form})
 
 def livro_delete(request, pk):
@@ -70,6 +78,5 @@ def livro_delete(request, pk):
     return render(request, 'livro_delete.html', {'livro': livro})
 
 def livros_filters(request):
-    print("asdsads")
     livros_filter = LivrosFilter(request.GET, queryset=Livros.objects.all())
     return render(request, 'livros_listados.html', {'livros_filter': livros_filter})

@@ -19,6 +19,7 @@ class Livros(models.Model):
     genero= models.ForeignKey(Genero, related_name='Livros', on_delete=models.CASCADE)
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     resumo = models.TextField()
+    ISBN = models.IntegerField(max_length=13)
 
     def __str__(self):
         return self.titulo

@@ -15,6 +15,6 @@ class GeneroForm(forms.ModelForm):
 class LivrosForm(forms.ModelForm):
     class Meta:
         model = Livros
-        fields = ['titulo', 'autor', 'genero','preco', 'resumo']
+        fields = ['titulo', 'autor', 'genero','preco', 'resumo', 'ISBN']
 
         
