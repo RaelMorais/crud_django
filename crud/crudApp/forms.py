@@ -13,6 +13,8 @@ class GeneroForm(forms.ModelForm):
         fields = ['genero']
 
 class LivrosForm(forms.ModelForm):
+    autor = forms.ModelChoiceField(queryset=Autor.objects.all(), required=True)
+    genero = forms.ModelChoiceField(queryset=Genero.objects.all(), required=True)
     class Meta:
         model = Livros
         fields = ['titulo', 'autor', 'genero','preco', 'resumo', 'ISBN']
