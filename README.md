@@ -1,6 +1,6 @@
 <h1>A simple CRUD of Library</h1>
 
-<p>This is an example CRUD repository for studies at Senai's in the Backend class</p>
+<p>This is an example CRUD repository for studies at Senai's in the Backend class on day 11/03</p>
 
 ## 🚀 Getting Started
 
